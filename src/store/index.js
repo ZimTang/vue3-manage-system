@@ -8,7 +8,9 @@ import actions from './actions'
 
 const store = createStore({
   state: {
-
+    token: '' || localStorage.getItem('token'),
+    userInfo: {},
+    isCollapse: true
   },
   mutations,
   getters,

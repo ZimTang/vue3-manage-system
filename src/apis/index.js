@@ -3,9 +3,17 @@
  */
 import request from '../utils/request'
 
-export default doLogin = (params) => {
+export const doLogin = (params) => {
   return request({
-    url: '/api/login',
+    url: '/users/login',
+    method: 'post',
     params
+  })
+}
+
+export const getSideBar = () => {
+  return request({
+    url: '/getSide',
+    method: 'get',
   })
 }
