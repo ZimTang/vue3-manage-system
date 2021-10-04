@@ -28,6 +28,20 @@ const routes = [
           title: 'tab选项卡'
         },
         component: () => import('../views/Tabs.vue')
+      },
+      {
+        path: '/baseForm',
+        meta: {
+          title: '基本表单'
+        },
+        component: () => import('../views/BaseForm.vue')
+      },
+      {
+        path: '/upload',
+        meta: {
+          title: '文件上传'
+        },
+        component: () => import('../views/Upload.vue')
       }
     ]
   },
