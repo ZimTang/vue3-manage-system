@@ -56,14 +56,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.el-aside {
-  background-color: #001323;
-  color: var(--el-text-color-primary);
-  text-align: center;
-  height: 100vh;
-  line-height: 260px;
-  width: 200px;
-}
+
 .nav-left {
   .el-breadcrumb {
     height: 60px;

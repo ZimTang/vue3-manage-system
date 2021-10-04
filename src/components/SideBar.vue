@@ -96,20 +96,20 @@ export default {
   }
 }
 
-.el-menu-vertical-demo { 
+.el-menu-vertical-demo {
   background-color: #001323;
   color: var(--el-text-color-primary);
   line-height: 260px;
   border-right: none;
   height: calc(100vh);
-  overflow-y:scroll;
+  overflow-y: scroll;
 }
 
-.el-menu-vertical-demo::-webkit-scrollbar{ 
-  display:none;
+.el-menu-vertical-demo::-webkit-scrollbar {
+  display: none;
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
-  min-height: 500px;
+  height: 100%;
 }
 </style>

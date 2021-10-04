@@ -17,7 +17,6 @@
         :data="tableData"
         class="table"
         border
-        style="width: 88%;"
         header-cell-class-name="table-header"
       >
         <el-table-column prop="id" label="ID" width="70" align="center" />
@@ -163,17 +162,14 @@ export default {
 
 <style lang="scss" scoped>
 .table-container {
-  padding-top: 30px;
-  padding-left: 40px;
-  padding-bottom: 30px;
-    height: 100wh;
+    // height: calc(100vh - 120px);
+    // margin-top: -0px;
   .table {
     font-size: 14px;
   }
   .title {
     display: flex;
     width: 63%;
-    // justify-content: space-around;
     margin-bottom: 20px;
   }
   .dialog-title {

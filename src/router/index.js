@@ -21,6 +21,13 @@ const routes = [
           title: '基础表格'
         },
         component: () => import('../views/BaseTable.vue')
+      },
+      {
+        path: '/tabs',
+        meta: {
+          title: 'tab选项卡'
+        },
+        component: () => import('../views/Tabs.vue')
       }
     ]
   },

@@ -20,26 +20,26 @@ export default {
 .welcome-container {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  padding-top: 80px;
-  height: 100wh;
+  height: calc(100vh - 160px);
   .content {
+    margin-top: 70px;
     .sub-title {
       font-size: 30px;
-      line-height: 42px; 
+      line-height: 50px; 
       text-align: left;
       color:#333
     }
     .title {
       font-size: 40px;
       text-align: left;
-      line-height: 62px; 
+      line-height: 72px; 
       color:#409eff
     }
     .desc {
       font-size: 14px;
       color: #999;
       text-align: left;
+      line-height: 80px;
     }
   }
   .img {

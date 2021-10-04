@@ -44,7 +44,6 @@ export default {
   background-color: #001323;
   color: var(--el-text-color-primary);
   text-align: center;
-  // height: 100%;
   line-height: 260px;
   width: 200px;
 }
@@ -52,11 +51,9 @@ export default {
 .el-main {
   background-color: #e7e9ec;
   color: var(--el-text-color-primary);
-  text-align: center;
-  line-height: 160px;
   height: 100vh;
   .main-page {
-    // height: 100%;
+    padding: 25px;
     border-radius: 6px;
     box-shadow: 0px 0px 10px 5px #e7e9ec;
     background-color: #fff;
