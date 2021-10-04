@@ -1,15 +1,15 @@
 <template>
   <el-container>
-    <SideBar/>
+    <SideBar />
     <el-container>
-      <el-header>
-        <Header/>
-      </el-header>
-      <el-main>
-        <div class="main-page">
-          <router-view></router-view>
-        </div>
-      </el-main>
+        <el-header>
+          <Header />
+        </el-header>
+        <el-main>
+          <div class="main-page">
+            <router-view></router-view>
+          </div>
+        </el-main>
     </el-container>
   </el-container>
 </template>
@@ -27,6 +27,9 @@ export default {
 </script>
 
 <style lang="scss">
+.el-container {
+  height: 100vh;
+}
 .el-header {
   background-color: #fff;
   color: var(--el-text-color-primary);
@@ -35,14 +38,13 @@ export default {
   justify-content: space-between;
   height: 60px;
   margin: 0 20px 0 10px;
-
 }
 
 .el-aside {
   background-color: #001323;
   color: var(--el-text-color-primary);
   text-align: center;
-  height: 100%;
+  // height: 100%;
   line-height: 260px;
   width: 200px;
 }
@@ -54,7 +56,9 @@ export default {
   line-height: 160px;
   height: 100vh;
   .main-page {
-    height: 100%;
+    // height: 100%;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px 5px #e7e9ec;
     background-color: #fff;
   }
 }

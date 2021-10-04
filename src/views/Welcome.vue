@@ -21,7 +21,8 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 100%;
+  padding-top: 80px;
+  height: 100wh;
   .content {
     .sub-title {
       font-size: 30px;

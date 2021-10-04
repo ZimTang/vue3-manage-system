@@ -17,3 +17,10 @@ export const getSideBar = () => {
     method: 'get',
   })
 }
+
+export const getTable = () => {
+  return request({
+    url: '/getTable',
+    method: 'get'
+  })
+}

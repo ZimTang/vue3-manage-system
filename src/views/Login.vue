@@ -51,7 +51,7 @@ export default {
             userName: formData.username,
             userPwd: formData.password
           }).then(res => {
-            router.push('/')
+            router.push('/welcome')
             store.commit('saveToken', res.data.token)
             store.commit('saveInfo', res.data.userInfo)
             console.log(res)

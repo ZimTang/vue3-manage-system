@@ -4,7 +4,7 @@
       <el-breadcrumb-item @click="changeCollapse">
         <i class="el-icon-s-unfold"></i>
       </el-breadcrumb-item>
-      <el-breadcrumb-item>面包屑</el-breadcrumb-item>
+      <el-breadcrumb-item>{{title}}</el-breadcrumb-item>
     </el-breadcrumb>
   </div>
   <div class="nav-right">
@@ -33,16 +33,23 @@
 
 <script>
 import { useStore } from "vuex"
+import { useRoute } from "vue-router"
+import { computed } from 'vue'
 export default {
   name: 'Header',
   setup() {
     const store = useStore()
+    const route = useRoute()
+    const title = computed(() => {
+      return route.meta.title
+    })
     const changeCollapse = function () {
       store.commit('changeIsCollapse', !store.state.isCollapse)
       console.log(store.state.isCollapse)
     }
     return {
-      changeCollapse
+      changeCollapse,
+      title
     }
   }
 }

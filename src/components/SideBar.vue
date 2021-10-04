@@ -1,6 +1,6 @@
 <template>
   <el-menu
-    default-active="/dashboard"
+    default-active="/welcome"
     background-color="#001323"
     active-text-color="#409EFF"
     :collapse="isCollapse"
@@ -8,8 +8,11 @@
     @open="handleOpen"
     @close="handleClose"
     class="el-menu-vertical-demo"
+    router
+    unique-opened
+    collapse-transition
   >
-    <el-menu-item>
+    <el-menu-item index="/welcome">
       <div class="logo">
         <img src="./../assets/logo.png" />
         <span>后台管理</span>
@@ -49,7 +52,6 @@
 import { getSideBar } from '../apis'
 import { computed, reactive } from 'vue'
 import { useStore } from "vuex"
-
 export default {
   name: 'SideBar',
   setup() {
@@ -94,15 +96,20 @@ export default {
   }
 }
 
-
-.el-menu-vertical-demo {
+.el-menu-vertical-demo { 
   background-color: #001323;
   color: var(--el-text-color-primary);
   line-height: 260px;
   border-right: none;
+  height: calc(100vh);
+  overflow-y:scroll;
+}
+
+.el-menu-vertical-demo::-webkit-scrollbar{ 
+  display:none;
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
-  min-height: 400px;
+  min-height: 500px;
 }
 </style>

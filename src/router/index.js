@@ -9,8 +9,18 @@ const routes = [
     component: () => import('../views/Home.vue'),
     children: [
       {
-        path: '/',
-        component: () => import('../views/Welcome.vue')
+        path: '/welcome',
+        meta: {
+          title: '系统首页'
+        },
+        component: () => import('../views/Welcome.vue'),
+      },
+      {
+        path: '/baseTable',
+        meta: {
+          title: '基础表格'
+        },
+        component: () => import('../views/BaseTable.vue')
       }
     ]
   },
