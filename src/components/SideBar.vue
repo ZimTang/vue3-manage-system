@@ -103,6 +103,8 @@ export default {
   border-right: none;
   height: calc(100vh);
   overflow-y: scroll;
+  position: relative;
+  z-index: 999;
 }
 
 .el-menu-vertical-demo::-webkit-scrollbar {

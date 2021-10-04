@@ -42,6 +42,13 @@ const routes = [
           title: '文件上传'
         },
         component: () => import('../views/Upload.vue')
+      },
+      {
+        path: '/editor',
+        meta: {
+          title: '富文本编辑器'
+        },
+        component: () => import('../views/Editor.vue')
       }
     ]
   },
