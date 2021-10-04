@@ -24,12 +24,12 @@
 -   [x] Element Plus
 -   [x] 登录/注销
 -   [x] 系统首页
-  <!-- -   [] 基础表格
-  -   [] Tab 选项卡
-  -   [] 表单
-  -   [] 图表 :bar_chart:
-  -   [] 富文本编辑器
-  -   [] 图片拖拽/裁剪上传
+  - [x] 基础表格
+  - [x] Tab 选项卡
+  - [x] 基本表单
+  - [x] 文件上传
+  - [x] 富文本编辑器
+  <!-- -   [] 图表 :bar_chart:
   -   [] 权限测试
   -   [] 404 / 403
   -   [] 三级菜单
@@ -38,15 +38,25 @@
 
 ## 安装步骤
 
-```
-// 克隆到本地
-git clone git@github.com:Twitzz/vue3-manage-system.git    
-// 进入目录  
-cd vue-manage-system    
-// 安装项目依赖
-yarn install         
-// 开启服务器，浏览器访问 http://localhost:8080
-yarn dev
-// 执行构建命令，生成的dist文件夹放在服务器下即可访问
-yarn build
-```
+1. 克隆到本地
+   ```
+   git clone git@github.com:Twitzz/vue3-manage-system.git
+   ```
+2. 进入目录
+   ```
+   cd vue-manage-system
+   ```
+3. 安装项目依赖
+   ```
+   yarn install
+   ```
+4. 启动项目，浏览器访问 http://localhost:8080
+   ```
+   yarn dev
+   ```
+5. 执行构建命令，生成的dist文件夹放在服务器下即可访问
+   ```
+   yarn build
+   ```
+
+
