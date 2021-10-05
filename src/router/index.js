@@ -51,6 +51,20 @@ const routes = [
         component: () => import('../views/Editor.vue')
       },
       {
+        path: '/permission',
+        meta: {
+          title: '权限测试'
+        },
+        component: () => import('../views/Permission.vue')
+      },
+      {
+        path: '/404',
+        meta: {
+          title: '找不到页面'
+        },
+        component: () => import('../views/404.vue')
+      },
+      {
         path: '/donate',
         meta: {
           title: '支持作者'
