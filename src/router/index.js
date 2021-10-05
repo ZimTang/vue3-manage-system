@@ -49,6 +49,13 @@ const routes = [
           title: '富文本编辑器'
         },
         component: () => import('../views/Editor.vue')
+      },
+      {
+        path: '/donate',
+        meta: {
+          title: '支持作者'
+        },
+        component: () => import('../views/Donate.vue')
       }
     ]
   },
