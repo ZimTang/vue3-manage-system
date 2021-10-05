@@ -1,6 +1,8 @@
 <template>
   <el-container>
-    <SideBar />
+    <el-aside>
+      <SideBar />
+    </el-aside>
     <el-container>
         <el-header>
           <Header />
@@ -45,7 +47,7 @@ export default {
   color: var(--el-text-color-primary);
   text-align: center;
   line-height: 260px;
-  width: 200px;
+  // width: 200px;
 }
 
 .el-main {

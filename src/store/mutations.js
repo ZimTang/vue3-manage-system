@@ -5,11 +5,11 @@ export default {
     localStorage.setItem('token', token)
   },
   // 保存用户信息
-  saveInfo(state,userInfo) {
+  saveInfo(state, userInfo) {
     state.userInfo = userInfo
   },
   // 修改sidebar的状态
   changeIsCollapse(state, isCollapse) {
     state.isCollapse = isCollapse
-  }
+  },
 }

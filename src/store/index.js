@@ -10,11 +10,11 @@ const store = createStore({
   state: {
     token: '' || localStorage.getItem('token'),
     userInfo: {},
-    isCollapse: true
+    isCollapse: true,
   },
   mutations,
   getters,
-  actions
+  actions,
 })
 
 export default store

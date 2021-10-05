@@ -4,7 +4,9 @@
     <a href="https://www.wangeditor.com/doc/">wangEditor</a>
   </p>
   <div id="editor"></div>
-  <el-button type="primary" style="margin-top:20px" @click="submit">提交</el-button>
+  <el-button type="primary" style="margin-top: 20px" @click="submit"
+    >提交</el-button
+  >
 </template>
 
 <script>
@@ -13,21 +15,21 @@ import E from 'wangeditor'
 export default {
   name: 'Editor',
   setup() {
-    let editor;
+    let editor
     const content = reactive({
       html: '',
-      text: ''
+      text: '',
     })
     onMounted(() => {
       // 创建编辑器
       editor = new E(document.getElementById('editor'))
       // 调整编辑器层级
-      editor.config.zIndex = 1;
+      editor.config.zIndex = 1
       editor.create()
     })
     onBeforeUnmount(() => {
-      editor.destroy();
-      editor = null;
+      editor.destroy()
+      editor = null
     })
     // 提交按钮的回调
     const submit = () => {
@@ -37,9 +39,9 @@ export default {
     return {
       editor,
       content,
-      submit
+      submit,
     }
-  }
+  },
 }
 </script>
 

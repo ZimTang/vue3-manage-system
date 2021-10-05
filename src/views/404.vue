@@ -29,9 +29,9 @@ export default {
 
     return {
       goWelcome,
-      goBack
+      goBack,
     }
-  }
+  },
 }
 </script>
 

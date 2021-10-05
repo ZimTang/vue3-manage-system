@@ -13,12 +13,7 @@
       <el-button type="primary" icon="el-icon-search" style="margin-left:20px">搜索</el-button>
     </div>
     <div>
-      <el-table
-        :data="tableData"
-        class="table"
-        border
-        header-cell-class-name="table-header"
-      >
+      <el-table :data="tableData" class="table" border header-cell-class-name="table-header">
         <el-table-column prop="id" label="ID" width="70" align="center" />
         <el-table-column prop="name" label="用户名" width="80" align="center" />
         <el-table-column prop="money" label="账户余额" width="90" align="center" />
@@ -122,7 +117,7 @@ export default {
       dialog.dialogFormVisible = false
       ElMessage({
         type: 'success',
-        message: `修改第${idx+1}行成功`,
+        message: `修改第${idx + 1}行成功`,
       })
     }
     // 删除按钮的回调
@@ -143,8 +138,8 @@ export default {
             message: '删除成功',
           })
         })
-        // .catch(() => {
-        // })
+      // .catch(() => {
+      // })
     }
     const value = ref('')
     return {
@@ -162,8 +157,8 @@ export default {
 
 <style lang="scss" scoped>
 .table-container {
-    // height: calc(100vh - 120px);
-    // margin-top: -0px;
+  // height: calc(100vh - 120px);
+  // margin-top: -0px;
   .table {
     font-size: 14px;
   }

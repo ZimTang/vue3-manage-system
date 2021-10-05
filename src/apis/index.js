@@ -3,11 +3,11 @@
  */
 import request from '../utils/request'
 
-export const doLogin = (params) => {
+export const doLogin = params => {
   return request({
     url: '/users/login',
     method: 'post',
-    params
+    params,
   })
 }
 
@@ -21,6 +21,6 @@ export const getSideBar = () => {
 export const getTable = () => {
   return request({
     url: '/getTable',
-    method: 'get'
+    method: 'get',
   })
 }

@@ -18,7 +18,7 @@
         <span>后台管理</span>
       </div>
     </el-menu-item>
-    <template v-for="(side,index) in sideBar">
+    <template v-for="(side, index) in sideBar">
       <template v-if="side.subs">
         <el-sub-menu :index="side.index" :key="index">
           <template #title>
@@ -26,15 +26,22 @@
             <span>{{ side.title }}</span>
           </template>
           <template v-for="subItem in side.subs">
-            <el-submenu v-if="subItem.subs" :index="subItem.index" :key="subItem.index">
+            <el-submenu
+              v-if="subItem.subs"
+              :index="subItem.index"
+              :key="subItem.index"
+            >
               <template #title>{{ subItem.title }}</template>
               <el-menu-item
                 v-for="(threeItem, i) in subItem.subs"
                 :key="i"
                 :index="threeItem.index"
-              >{{ threeItem.title }}</el-menu-item>
+                >{{ threeItem.title }}</el-menu-item
+              >
             </el-submenu>
-            <el-menu-item v-else :index="subItem.index">{{ subItem.title }}</el-menu-item>
+            <el-menu-item v-else :index="subItem.index">{{
+              subItem.title
+            }}</el-menu-item>
           </template>
         </el-sub-menu>
       </template>
@@ -51,7 +58,7 @@
 <script>
 import { getSideBar } from '../apis'
 import { computed, reactive } from 'vue'
-import { useStore } from "vuex"
+import { useStore } from 'vuex'
 export default {
   name: 'SideBar',
   setup() {
@@ -66,18 +73,15 @@ export default {
       })
       console.log(sideBar)
     })
-    const handleOpen = () => {
-    }
-    const handleClose = () => {
-
-    }
+    const handleOpen = () => {}
+    const handleClose = () => {}
     return {
       sideBar,
       handleOpen,
       handleClose,
       isCollapse,
     }
-  }
+  },
 }
 </script>
 

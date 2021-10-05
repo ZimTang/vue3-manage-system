@@ -4,13 +4,23 @@
       <div class="title">火星</div>
       <el-form status-icon :rules="rules" ref="userForm" :model="formData">
         <el-form-item prop="username">
-          <el-input type="text" prefix-icon="el-icon-user" v-model="formData.username"></el-input>
+          <el-input
+            type="text"
+            prefix-icon="el-icon-user"
+            v-model="formData.username"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="password">
-          <el-input type="password" prefix-icon="el-icon-view" v-model="formData.password"></el-input>
+          <el-input
+            type="password"
+            prefix-icon="el-icon-view"
+            v-model="formData.password"
+          ></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" class="btn-login" @click="toLogin">登录</el-button>
+          <el-button type="primary" class="btn-login" @click="toLogin"
+            >登录</el-button
+          >
         </el-form-item>
       </el-form>
     </div>
@@ -18,10 +28,10 @@
 </template>
 
 <script>
-import { doLogin } from "../apis"
+import { doLogin } from '../apis'
 import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router'
-import { useStore } from "vuex"
+import { useStore } from 'vuex'
 export default {
   name: 'Login',
   setup() {
@@ -35,21 +45,21 @@ export default {
       username: {
         required: true,
         message: '请输入用户名',
-        trigger: 'blur'
+        trigger: 'blur',
       },
       password: {
         required: true,
         message: '请输入密码',
-        trigger: 'blur'
-      }
+        trigger: 'blur',
+      },
     })
     const userForm = ref(null)
     const toLogin = () => {
-      userForm.value.validate((valid) => {
+      userForm.value.validate(valid => {
         if (valid) {
           doLogin({
             userName: formData.username,
-            userPwd: formData.password
+            userPwd: formData.password,
           }).then(res => {
             router.push('/welcome')
             store.commit('saveToken', res.data.token)
@@ -65,9 +75,9 @@ export default {
       formData,
       rules,
       userForm,
-      toLogin
+      toLogin,
     }
-  }
+  },
 }
 </script>
 

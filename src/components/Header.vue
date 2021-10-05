@@ -4,11 +4,16 @@
       <el-breadcrumb-item @click="changeCollapse">
         <i class="el-icon-s-unfold"></i>
       </el-breadcrumb-item>
-      <el-breadcrumb-item>{{title}}</el-breadcrumb-item>
+      <el-breadcrumb-item>{{ title }}</el-breadcrumb-item>
     </el-breadcrumb>
   </div>
   <div class="nav-right">
-    <el-tooltip class="item" effect="dark" content="Bottom Center prompts info" placement="bottom">
+    <el-tooltip
+      class="item"
+      effect="dark"
+      content="Bottom Center prompts info"
+      placement="bottom"
+    >
       <router-link to="/">
         <i class="el-icon-bell"></i>
       </router-link>
@@ -32,8 +37,8 @@
 </template>
 
 <script>
-import { useStore } from "vuex"
-import { useRoute } from "vue-router"
+import { useStore } from 'vuex'
+import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 export default {
   name: 'Header',
@@ -49,14 +54,13 @@ export default {
     }
     return {
       changeCollapse,
-      title
+      title,
     }
-  }
+  },
 }
 </script>
 
 <style scoped lang="scss">
-
 .nav-left {
   .el-breadcrumb {
     height: 60px;

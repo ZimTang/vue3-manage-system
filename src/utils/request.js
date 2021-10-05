@@ -1,11 +1,12 @@
 /**
  * axios的二次封装
  */
-import axios from "axios";
+import axios from 'axios'
 
 const request = axios.create({
-  baseURL: 'https://www.fastmock.site/mock/f750b31e484c24ecb91b679f1bebc92f/api',
-  timeout: 5000
+  baseURL:
+    'https://www.fastmock.site/mock/f750b31e484c24ecb91b679f1bebc92f/api',
+  timeout: 5000,
 })
 /**
  * 请求拦截器
@@ -31,7 +32,7 @@ request.interceptors.response.use(config => {
   return {
     data,
     code,
-    msg
+    msg,
   }
 })
 

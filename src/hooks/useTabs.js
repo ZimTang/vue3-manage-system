@@ -7,10 +7,10 @@
  * @param {object} state 需要处理的对象
  * @param {boolean} all 是否需要全部处理
  */
-function useTabs(types, nowType, targetType,index, state, all) {
+function useTabs(types, nowType, targetType, index, state, all) {
   if (!all) {
     types.forEach(item => {
-      if(item=== nowType) {
+      if (item === nowType) {
         state[targetType].push(state[nowType][index])
         state[nowType].splice(index, 1)
       }

@@ -1,7 +1,7 @@
 <template>
   <p class="tips">如果该项目对你有帮助，那就请作者喝杯饮料吧！加微信号danyuan_30探讨问题</p>
   <div class="code">
-    <img src="../assets/img/mine.png" alt="">
+    <img src="../assets/img/mine.png" alt />
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
 
 <style scoped lang="scss">
 .tips {
-  background-color: #EEF1F6;
+  background-color: #eef1f6;
   text-indent: 15px;
   height: 40px;
   line-height: 40px;
@@ -24,9 +24,8 @@ export default {
 .code {
   height: 360px;
   img {
-  width: 260px;
-  height: 260px;
+    width: 260px;
+    height: 260px;
+  }
 }
-}
-
 </style>

@@ -1,5 +1,11 @@
 <template>
-  <el-form ref="Form" :model="ruleForm" :rules="rules" label-width="120px" class="demo-ruleForm">
+  <el-form
+    ref="Form"
+    :model="ruleForm"
+    :rules="rules"
+    label-width="120px"
+    class="demo-ruleForm"
+  >
     <el-form-item label="表单名称" prop="name">
       <el-input v-model="ruleForm.name"></el-input>
     </el-form-item>
@@ -32,7 +38,11 @@
       <el-col class="line" :span="2">-</el-col>
       <el-col :span="11">
         <el-form-item prop="date2">
-          <el-time-picker v-model="ruleForm.date2" placeholder="选择时间" style="width: 100%"></el-time-picker>
+          <el-time-picker
+            v-model="ruleForm.date2"
+            placeholder="选择时间"
+            style="width: 100%"
+          ></el-time-picker>
         </el-form-item>
       </el-col>
     </el-form-item>
@@ -123,7 +133,6 @@ export default {
             {
               value: '渝中区',
               label: '渝中区',
-
             },
             {
               value: '巴南区',
@@ -136,7 +145,7 @@ export default {
                 {
                   value: '重庆工程学院',
                   label: '重庆工程学院',
-                }
+                },
               ],
             },
           ],
@@ -158,7 +167,7 @@ export default {
       ],
     })
     // 处理级联选择器的回调
-    const handleChange = (value) => {
+    const handleChange = value => {
       console.log(value)
     }
     // 表单字段
@@ -175,11 +184,11 @@ export default {
     const Form = ref(null)
     // 表单提交的回调
     const submitForm = () => {
-      Form.value.validate((valid) => {
+      Form.value.validate(valid => {
         if (valid) {
           ElMessage({
             type: 'success',
-            message: '提交成功'
+            message: '提交成功',
           })
         } else {
           console.log('error submit!!')
