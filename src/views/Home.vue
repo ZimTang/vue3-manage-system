@@ -1,8 +1,6 @@
 <template>
   <el-container>
-    <el-aside>
       <SideBar />
-    </el-aside>
     <el-container>
         <el-header>
           <Header />

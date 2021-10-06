@@ -1,48 +1,50 @@
 <template>
-  <p class="tips">
-    wangEditor：轻量级 web 富文本编辑器，配置方便，使用简单。 访问地址：
-    <a href="https://www.wangeditor.com/doc/">wangEditor</a>
-  </p>
-  <div id="editor"></div>
-  <el-button type="primary" style="margin-top: 20px" @click="submit"
-    >提交</el-button
-  >
+  <div class="editor-container">
+    <p class="tips">
+      wangEditor：轻量级 web 富文本编辑器，配置方便，使用简单。 访问地址：
+      <a href="https://www.wangeditor.com/doc/">wangEditor</a>
+    </p>
+    <div id="editor" style="margin-left: -20px; margin-right: -20px"></div>
+    <el-button type="primary" style="margin-top: 20px" @click="submit"
+      >提交</el-button
+    >
+  </div>
 </template>
 
 <script>
-import { onBeforeUnmount, onMounted, reactive } from 'vue-demi'
-import E from 'wangeditor'
+import { onBeforeUnmount, onMounted, reactive } from 'vue-demi';
+import E from 'wangeditor';
 export default {
   name: 'Editor',
   setup() {
-    let editor
+    let editor;
     const content = reactive({
       html: '',
       text: '',
-    })
+    });
     onMounted(() => {
       // 创建编辑器
-      editor = new E(document.getElementById('editor'))
+      editor = new E(document.getElementById('editor'));
       // 调整编辑器层级
-      editor.config.zIndex = 1
-      editor.create()
-    })
+      editor.config.zIndex = 1;
+      editor.create();
+    });
     onBeforeUnmount(() => {
-      editor.destroy()
-      editor = null
-    })
+      editor.destroy();
+      editor = null;
+    });
     // 提交按钮的回调
     const submit = () => {
-      content.html = editor.txt.html()
-      console.log(content.html)
-    }
+      content.html = editor.txt.html();
+      console.log(content.html);
+    };
     return {
       editor,
       content,
       submit,
-    }
+    };
   },
-}
+};
 </script>
 
 <style scoped lang="scss">
