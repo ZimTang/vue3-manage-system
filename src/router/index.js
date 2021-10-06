@@ -73,6 +73,13 @@ const routes = [
         component: () => import('../views/403.vue'),
       },
       {
+        path: '/i18n',
+        meta: {
+          title: '国际化功能',
+        },
+        component: () => import('../views/I18n.vue'),
+      },
+      {
         path: '/donate',
         meta: {
           title: '支持作者',
