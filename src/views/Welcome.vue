@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'Welcome'
+  name: 'Welcome',
 }
 </script>
 
@@ -21,7 +21,7 @@ export default {
   justify-content: space-around;
   height: calc(100vh - 160px);
   .content {
-    margin-top: 70px;
+    margin-top: 170px;
     .sub-title {
       font-size: 30px;
       line-height: 50px;
@@ -42,7 +42,8 @@ export default {
     }
   }
   .img {
-    background-image: url("../assets/img/welcome.png");
+    margin-top: 100px;
+    background-image: url('../assets/img/welcome.png');
     width: 371px;
     height: 438px;
   }
