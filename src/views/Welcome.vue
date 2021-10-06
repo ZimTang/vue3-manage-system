@@ -19,7 +19,7 @@ export default {
 .welcome-container {
   display: flex;
   justify-content: space-around;
-  height: calc(100vh - 160px);
+  height: calc(100vh - 100px);
   .content {
     margin-top: 170px;
     .sub-title {

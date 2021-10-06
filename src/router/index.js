@@ -73,6 +73,13 @@ const routes = [
         component: () => import('../views/403.vue'),
       },
       {
+        path: '/icon',
+        meta: {
+          title: '自定义图标',
+        },
+        component: () => import('../views/Icon.vue'),
+      },
+      {
         path: '/charts',
         meta: {
           title: 'echarts图表',
