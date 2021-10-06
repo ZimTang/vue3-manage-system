@@ -73,6 +73,13 @@ const routes = [
         component: () => import('../views/403.vue'),
       },
       {
+        path: '/charts',
+        meta: {
+          title: 'echarts图表',
+        },
+        component: () => import('../views/Charts.vue'),
+      },
+      {
         path: '/i18n',
         meta: {
           title: '国际化功能',
