@@ -5,83 +5,104 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/' ,
+    path: '/',
     component: () => import('../views/Home.vue'),
     children: [
       {
         path: '/welcome',
         meta: {
-          title: '系统首页'
+          title: '系统首页',
         },
         component: () => import('../views/Welcome.vue'),
       },
       {
         path: '/baseTable',
         meta: {
-          title: '基础表格'
+          title: '基础表格',
         },
-        component: () => import('../views/BaseTable.vue')
+        component: () => import('../views/BaseTable.vue'),
       },
       {
         path: '/tabs',
         meta: {
-          title: 'tab选项卡'
+          title: 'tab选项卡',
         },
-        component: () => import('../views/Tabs.vue')
+        component: () => import('../views/Tabs.vue'),
       },
       {
         path: '/baseForm',
         meta: {
-          title: '基本表单'
+          title: '基本表单',
         },
-        component: () => import('../views/BaseForm.vue')
+        component: () => import('../views/BaseForm.vue'),
       },
       {
         path: '/upload',
         meta: {
-          title: '文件上传'
+          title: '文件上传',
         },
-        component: () => import('../views/Upload.vue')
+        component: () => import('../views/Upload.vue'),
       },
       {
         path: '/editor',
         meta: {
-          title: '富文本编辑器'
+          title: '富文本编辑器',
         },
-        component: () => import('../views/Editor.vue')
+        component: () => import('../views/Editor.vue'),
       },
       {
         path: '/permission',
         meta: {
-          title: '权限测试'
+          title: '权限测试',
+          permission: true,
         },
-        component: () => import('../views/Permission.vue')
+        component: () => import('../views/Permission.vue'),
       },
       {
         path: '/404',
         meta: {
-          title: '找不到页面'
+          title: '找不到页面',
         },
-        component: () => import('../views/404.vue')
+        component: () => import('../views/404.vue'),
+      },
+      {
+        path: '/403',
+        meta: {
+          title: '没有权限',
+        },
+        component: () => import('../views/403.vue'),
       },
       {
         path: '/donate',
         meta: {
-          title: '支持作者'
+          title: '支持作者',
         },
-        component: () => import('../views/Donate.vue')
-      }
-    ]
+        component: () => import('../views/Donate.vue'),
+      },
+    ],
   },
   {
     path: '/login',
-    component: () => import('../views/Login.vue')
-  }
+    component: () => import('../views/Login.vue'),
+  },
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
+})
+
+// 路由守卫
+router.beforeEach((to, from, next) => {
+  const username = localStorage.getItem('username')
+  if (!username && to.path !== '/login') {
+    next('/login')
+  } else if (to.meta.permission) {
+    console.log(123)
+    username === 'admin' ? next() : next('/403')
+  } else {
+    next()
+  }
 })
 
 export default router

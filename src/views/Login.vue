@@ -62,6 +62,7 @@ export default {
             userPwd: formData.password,
           }).then(res => {
             router.push('/welcome')
+            localStorage.setItem('username', formData.username)
             store.commit('saveToken', res.data.token)
             store.commit('saveInfo', res.data.userInfo)
             console.log(res)
