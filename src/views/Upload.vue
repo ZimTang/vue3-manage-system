@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="upload-container">
     <div class="title">拖拽上传</div>
     <p class="tips">
       Element Plus自带上传组件。 访问地址：
@@ -41,6 +41,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.upload-container {
+  width: 90%;
+  margin: 0 auto;
+}
 .title {
   margin-bottom: 20px;
   font-size: 22px;

@@ -15,10 +15,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .welcome-container {
   display: flex;
-  justify-content: space-around;
   height: calc(100vh - 160px);
   .content {
     margin-top: 170px;
@@ -46,6 +45,9 @@ export default {
     background-image: url('../assets/img/welcome.png');
     width: 371px;
     height: 438px;
+    position: absolute;
+    z-index: 999;
+    right: 150px;
   }
 }
 </style>

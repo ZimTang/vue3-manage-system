@@ -17,6 +17,9 @@
             v-model="formData.password"
           ></el-input>
         </el-form-item>
+        <div class="tips">
+          <p>tips: 用户名和密码可以随便输入</p>
+        </div>
         <el-form-item>
           <el-button type="primary" class="btn-login" @click="toLogin"
             >登录</el-button
@@ -101,9 +104,15 @@ export default {
       text-align: center;
       font-size: 25px;
       font-weight: bold;
+      color: #409eff;
     }
     .btn-login {
       width: 100%;
+    }
+    .tips {
+      margin: 20px 0;
+      color: #929292;
+      font-size: 14px;
     }
   }
 }

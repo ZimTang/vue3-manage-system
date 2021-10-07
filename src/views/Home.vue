@@ -7,7 +7,7 @@
       </el-header>
       <el-main>
         <div class="main-page">
-          <router-view v-slot="{ Component }">
+          <router-view v-slot="{ Component }" class="content">
             <transition name="component-fade" mode="out-in">
               <keep-alive>
                 <component :is="Component" />
@@ -74,5 +74,9 @@ export default {
 .component-fade-enter-from,
 .component-fade-leave-to {
   opacity: 0;
+}
+.content {
+  width: 90%;
+  margin: 0 auto;
 }
 </style>

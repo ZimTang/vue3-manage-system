@@ -1,139 +1,145 @@
 <template>
-  <el-tabs v-model="activeName" @tab-click="handleClick">
-    <el-tab-pane
-      :label="'未读消息' + '(' + state.unread.length + ')'"
-      name="first"
-    >
-      <el-table :data="state.unread" style="width: 100%" :show-header="false">
-        <el-table-column>
-          <template #default="scope">
-            <span class="msg">{{ scope.row.title }}</span>
-          </template>
-        </el-table-column>
-        <el-table-column prop="date" width="180" />
-        <el-table-column width="100">
-          <template #default="scope">
-            <el-button
-              size="small"
-              @click="
-                handleTabs(
-                  ['unread', 'readed', 'recycle'],
-                  'unread',
-                  'readed',
-                  scope.$index,
-                  state
-                )
-              "
-              >标为已读</el-button
-            >
-          </template>
-        </el-table-column>
-      </el-table>
-      <el-button
-        type="primary"
-        @click="
-          handleTabs(
-            ['unread', 'readed', 'recycle'],
-            'unread',
-            'readed',
-            '',
-            state,
-            true
-          )
-        "
-        >全部标记为已读</el-button
+  <div class="tabs-container">
+    <el-tabs v-model="activeName" @tab-click="handleClick">
+      <el-tab-pane
+        :label="'未读消息' + '(' + state.unread.length + ')'"
+        name="first"
       >
-    </el-tab-pane>
-    <el-tab-pane
-      :label="'已读消息' + '(' + state.readed.length + ')'"
-      name="second"
-    >
-      <el-table :data="state.readed" style="width: 100%" :show-header="false">
-        <el-table-column>
-          <template #default="scope">
-            <span class="msg">{{ scope.row.title }}</span>
-          </template>
-        </el-table-column>
-        <el-table-column prop="date" width="180" />
-        <el-table-column width="100">
-          <template #default="scope">
-            <el-button
-              size="small"
-              type="danger"
-              @click="
-                handleTabs(
-                  ['unread', 'readed', 'recycle'],
-                  'readed',
-                  'recycle',
-                  scope.$index,
-                  state
-                )
-              "
-              >删除</el-button
-            >
-          </template>
-        </el-table-column>
-      </el-table>
-      <el-button
-        type="danger"
-        @click="
-          handleTabs(
-            ['unread', 'readed', 'recycle'],
-            'readed',
-            'recycle',
-            '',
-            state,
-            true
-          )
-        "
-        >删除全部</el-button
+        <el-table :data="state.unread" style="width: 100%" :show-header="false">
+          <el-table-column>
+            <template #default="scope">
+              <span class="msg">{{ scope.row.title }}</span>
+            </template>
+          </el-table-column>
+          <el-table-column prop="date" width="180" />
+          <el-table-column width="100">
+            <template #default="scope">
+              <el-button
+                size="small"
+                @click="
+                  handleTabs(
+                    ['unread', 'readed', 'recycle'],
+                    'unread',
+                    'readed',
+                    scope.$index,
+                    state
+                  )
+                "
+                >标为已读</el-button
+              >
+            </template>
+          </el-table-column>
+        </el-table>
+        <el-button
+          type="primary"
+          @click="
+            handleTabs(
+              ['unread', 'readed', 'recycle'],
+              'unread',
+              'readed',
+              '',
+              state,
+              true
+            )
+          "
+          >全部标记为已读</el-button
+        >
+      </el-tab-pane>
+      <el-tab-pane
+        :label="'已读消息' + '(' + state.readed.length + ')'"
+        name="second"
       >
-    </el-tab-pane>
-    <el-tab-pane
-      :label="'回收站' + '(' + state.recycle.length + ')'"
-      name="third"
-    >
-      <el-table :data="state.recycle" style="width: 100%" :show-header="false">
-        <el-table-column>
-          <template #default="scope">
-            <span class="msg">{{ scope.row.title }}</span>
-          </template>
-        </el-table-column>
-        <el-table-column prop="date" width="180" />
-        <el-table-column width="100">
-          <template #default="scope">
-            <el-button
-              size="small"
-              @click="
-                handleTabs(
-                  ['unread', 'readed', 'recycle'],
-                  'recycle',
-                  'readed',
-                  scope.$index,
-                  state
-                )
-              "
-              >还原</el-button
-            >
-          </template>
-        </el-table-column>
-      </el-table>
-      <el-button
-        type="danger"
-        @click="
-          handleTabs(
-            ['unread', 'readed', 'recycle'],
-            'recycle',
-            'unread',
-            '',
-            state,
-            true
-          )
-        "
-        >清空回收站</el-button
+        <el-table :data="state.readed" style="width: 100%" :show-header="false">
+          <el-table-column>
+            <template #default="scope">
+              <span class="msg">{{ scope.row.title }}</span>
+            </template>
+          </el-table-column>
+          <el-table-column prop="date" width="180" />
+          <el-table-column width="100">
+            <template #default="scope">
+              <el-button
+                size="small"
+                type="danger"
+                @click="
+                  handleTabs(
+                    ['unread', 'readed', 'recycle'],
+                    'readed',
+                    'recycle',
+                    scope.$index,
+                    state
+                  )
+                "
+                >删除</el-button
+              >
+            </template>
+          </el-table-column>
+        </el-table>
+        <el-button
+          type="danger"
+          @click="
+            handleTabs(
+              ['unread', 'readed', 'recycle'],
+              'readed',
+              'recycle',
+              '',
+              state,
+              true
+            )
+          "
+          >删除全部</el-button
+        >
+      </el-tab-pane>
+      <el-tab-pane
+        :label="'回收站' + '(' + state.recycle.length + ')'"
+        name="third"
       >
-    </el-tab-pane>
-  </el-tabs>
+        <el-table
+          :data="state.recycle"
+          style="width: 100%"
+          :show-header="false"
+        >
+          <el-table-column>
+            <template #default="scope">
+              <span class="msg">{{ scope.row.title }}</span>
+            </template>
+          </el-table-column>
+          <el-table-column prop="date" width="180" />
+          <el-table-column width="100">
+            <template #default="scope">
+              <el-button
+                size="small"
+                @click="
+                  handleTabs(
+                    ['unread', 'readed', 'recycle'],
+                    'recycle',
+                    'readed',
+                    scope.$index,
+                    state
+                  )
+                "
+                >还原</el-button
+              >
+            </template>
+          </el-table-column>
+        </el-table>
+        <el-button
+          type="danger"
+          @click="
+            handleTabs(
+              ['unread', 'readed', 'recycle'],
+              'recycle',
+              'unread',
+              '',
+              state,
+              true
+            )
+          "
+          >清空回收站</el-button
+        >
+      </el-tab-pane>
+    </el-tabs>
+  </div>
 </template>
 <script>
 import { ref, reactive } from 'vue'
@@ -193,6 +199,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.tabs-container {
+}
 .msg {
   cursor: pointer;
   color: #20a0ff;

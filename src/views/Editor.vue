@@ -4,7 +4,7 @@
       wangEditor：轻量级 web 富文本编辑器，配置方便，使用简单。 访问地址：
       <a href="https://www.wangeditor.com/doc/">wangEditor</a>
     </p>
-    <div id="editor" style="margin-left: -20px; margin-right: -20px"></div>
+    <div id="editor"></div>
     <el-button type="primary" style="margin-top: 20px" @click="submit"
       >提交</el-button
     >
@@ -48,6 +48,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.editor-container {
+  width: 90%;
+  margin: 0 auto;
+}
 .tips {
   background-color: #eef1f6;
   text-indent: 15px;

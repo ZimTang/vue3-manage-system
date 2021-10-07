@@ -85,6 +85,6 @@ export default {
 }
 .badge {
   // margin-top: 10px;
-  margin-right: 40px;
+  // margin-right: 40px;
 }
 </style>
