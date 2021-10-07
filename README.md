@@ -15,9 +15,9 @@
     <img src="https://img.shields.io/badge/%24-donate-ff69b4.svg" alt="donate">
   </a> -->
 
-  <!-- ## 前言
+  ## 前言
 
-该方案作为一套多功能的后台框架模板，适用于绝大部分的后台管理系统（Web Management System）开发。基于 Vue3，使用 Vite ，引用 Element Plus 组件库，方便开发快速简洁好看的组件。分离颜色样式，支持手动切换主题色，而且很方便使用自定义主题色。 -->
+Vue3-manage-system 是一个免费开源的基于```Vue3```,```Vite```,```Element Plus```的多功能的后台框架模板，适用于绝大部分的后台管理系统的前端解决方案，也可用于学习参考。
 
 ## 功能
 
@@ -29,12 +29,12 @@
   - [x] 基本表单
   - [x] 文件上传
   - [x] 富文本编辑器
-  <!-- -   [] 图表 :bar_chart:
-  -   [] 权限测试
-  -   [] 404 / 403
-  -   [] 三级菜单
-  -   [] 自定义图标
-  -   [] 国际化 -->
+  - [x] 图表:echarts:
+  - [x] 国际化
+  - [x] 权限测试
+  - [x] 404 / 403
+  <!-- -   [] 三级菜单 -->
+  <!-- -   [] 自定义图标 -->
 
 ## 安装步骤
 
@@ -59,4 +59,6 @@
    yarn build
    ```
 
+## License
 
+[MIT © Twitzz-2021](https://github.com/Twitzz/vue3-manage-system/blob/main/LICENSE)
