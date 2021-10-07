@@ -12,39 +12,39 @@
 </template>
 
 <script>
-import { onBeforeUnmount, onMounted, reactive } from 'vue-demi';
-import E from 'wangeditor';
+import { onBeforeUnmount, onMounted, reactive } from 'vue-demi'
+import E from 'wangeditor'
 export default {
   name: 'Editor',
   setup() {
-    let editor;
+    let editor
     const content = reactive({
       html: '',
       text: '',
-    });
+    })
     onMounted(() => {
       // 创建编辑器
-      editor = new E(document.getElementById('editor'));
+      editor = new E(document.getElementById('editor'))
       // 调整编辑器层级
-      editor.config.zIndex = 1;
-      editor.create();
-    });
+      editor.config.zIndex = 1
+      editor.create()
+    })
     onBeforeUnmount(() => {
-      editor.destroy();
-      editor = null;
-    });
+      editor.destroy()
+      editor = null
+    })
     // 提交按钮的回调
     const submit = () => {
-      content.html = editor.txt.html();
-      console.log(content.html);
-    };
+      content.html = editor.txt.html()
+      console.log(content.html)
+    }
     return {
       editor,
       content,
       submit,
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped lang="scss">

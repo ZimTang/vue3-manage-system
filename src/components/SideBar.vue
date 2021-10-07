@@ -115,7 +115,7 @@ export default {
   display: none;
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
+  width: 220px;
   height: 100%;
 }
 </style>

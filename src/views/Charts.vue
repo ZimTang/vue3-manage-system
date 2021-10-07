@@ -5,8 +5,8 @@
       <a href="https://echarts.apache.org/zh/index.html">echarts</a>
     </p>
     <div class="charts">
-      <div id="langCharts" style="width: 600px; height: 400px"></div>
-      <div id="frameworkCharts" style="width: 600px; height: 400px"></div>
+      <div id="langCharts" style="width: 45%; height: 400px"></div>
+      <div id="frameworkCharts" style="width: 45%; height: 400px"></div>
     </div>
   </div>
 </template>
@@ -158,6 +158,7 @@ export default {
   }
   .charts {
     display: flex;
+    width: 100%;
     margin-top: 50px;
     justify-content: space-around;
   }

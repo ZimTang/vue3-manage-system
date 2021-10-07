@@ -20,7 +20,7 @@
     </el-tooltip>
     <el-dropdown trigger="click">
       <span class="el-dropdown-link">
-        用户
+        {{ username }}
         <i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <template #dropdown>
@@ -29,7 +29,7 @@
             <el-dropdown-item>项目仓库</el-dropdown-item>
           </a>
           <el-dropdown-item>个人中心</el-dropdown-item>
-          <el-dropdown-item>退出登录</el-dropdown-item>
+          <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
         </el-dropdown-menu>
       </template>
     </el-dropdown>
@@ -40,11 +40,13 @@
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
+import router from '../router'
 export default {
   name: 'Header',
   setup() {
     const store = useStore()
     const route = useRoute()
+    const username = localStorage.getItem('username')
     const title = computed(() => {
       return route.meta.title
     })
@@ -52,9 +54,15 @@ export default {
       store.commit('changeIsCollapse', !store.state.isCollapse)
       console.log(store.state.isCollapse)
     }
+    const logout = () => {
+      router.replace('/login')
+      localStorage.clear()
+    }
     return {
       changeCollapse,
+      username,
       title,
+      logout,
     }
   },
 }
