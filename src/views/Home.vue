@@ -1,15 +1,21 @@
 <template>
   <el-container>
-      <SideBar />
+    <SideBar />
     <el-container>
-        <el-header>
-          <Header />
-        </el-header>
-        <el-main>
-          <div class="main-page">
-            <router-view></router-view>
-          </div>
-        </el-main>
+      <el-header>
+        <Header />
+      </el-header>
+      <el-main>
+        <div class="main-page">
+          <router-view v-slot="{ Component }">
+            <transition name="component-fade" mode="out-in">
+              <keep-alive>
+                <component :is="Component" />
+              </keep-alive>
+            </transition>
+          </router-view>
+        </div>
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -21,7 +27,7 @@ export default {
   name: 'Home',
   components: {
     Header,
-    SideBar
+    SideBar,
   },
 }
 </script>
@@ -58,5 +64,15 @@ export default {
     box-shadow: 0px 0px 10px 5px #e7e9ec;
     background-color: #fff;
   }
+}
+
+.component-fade-enter-active,
+.component-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.component-fade-enter-from,
+.component-fade-leave-to {
+  opacity: 0;
 }
 </style>

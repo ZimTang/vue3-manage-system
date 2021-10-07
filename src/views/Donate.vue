@@ -1,14 +1,16 @@
 <template>
-  <p class="tips">如果该项目对你有帮助，那就请作者喝杯饮料吧！加微信号danyuan_30探讨问题</p>
-  <div class="code">
-    <img src="../assets/img/mine.png" alt />
+  <div>
+    <p class="tips">
+      如果该项目对你有帮助，那就请作者喝杯饮料吧！加微信号danyuan_30探讨问题
+    </p>
+    <div class="code">
+      <img src="../assets/img/mine.png" alt />
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
 <style scoped lang="scss">

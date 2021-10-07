@@ -1,7 +1,7 @@
 <template>
   <div class="login-wrapper">
     <div class="model">
-      <div class="title">火星</div>
+      <div class="title">后台管理系统</div>
       <el-form status-icon :rules="rules" ref="userForm" :model="formData">
         <el-form-item prop="username">
           <el-input
@@ -94,7 +94,7 @@ export default {
     width: 500px;
     padding: 50px;
     background-color: #f9f9f8;
-    box-shadow: 0px 0px 10px 3px #c7c9cb4d;
+    box-shadow: 0px 0px 10px 10px #c7c9cb4d;
     .title {
       width: 100%;
       margin: 20px auto;

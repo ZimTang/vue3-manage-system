@@ -1,10 +1,10 @@
 <template>
   <el-menu
     default-active="/welcome"
-    background-color="#001323"
-    active-text-color="#409EFF"
+    background-color="#1b2a47"
+    active-text-color="#fff"
     :collapse="isCollapse"
-    text-color="#fff"
+    text-color="#7a80b4"
     @open="handleOpen"
     @close="handleClose"
     class="el-menu-vertical-demo"
@@ -15,7 +15,7 @@
     <el-menu-item index="/welcome">
       <div class="logo">
         <img src="./../assets/logo.png" />
-        <span>后台管理</span>
+        <span>后台管理系统</span>
       </div>
     </el-menu-item>
     <template v-for="(side, index) in sideBar">
@@ -92,6 +92,7 @@ export default {
   text-align: center;
   height: 50px;
   color: #fff;
+  font-size: 19px;
   img {
     margin-left: 3px;
     margin-right: 13px;
@@ -101,7 +102,7 @@ export default {
 }
 
 .el-menu-vertical-demo {
-  background-color: #001323;
+  background-color: #1b2a47;
   color: var(--el-text-color-primary);
   line-height: 260px;
   border-right: none;

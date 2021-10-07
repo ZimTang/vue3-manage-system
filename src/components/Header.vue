@@ -8,14 +8,11 @@
     </el-breadcrumb>
   </div>
   <div class="nav-right">
-    <el-tooltip
-      class="item"
-      effect="dark"
-      content="Bottom Center prompts info"
-      placement="bottom"
-    >
-      <router-link to="/">
-        <i class="el-icon-bell"></i>
+    <el-tooltip class="item" effect="dark" :content="msg" placement="bottom">
+      <router-link to="/tabs">
+        <el-badge is-dot class="badge">
+          <i class="el-icon-bell"></i>
+        </el-badge>
       </router-link>
     </el-tooltip>
     <el-dropdown trigger="click">
@@ -39,7 +36,7 @@
 <script>
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import router from '../router'
 export default {
   name: 'Header',
@@ -47,6 +44,7 @@ export default {
     const store = useStore()
     const route = useRoute()
     const username = localStorage.getItem('username')
+    const msg = ref('你有2条未读消息')
     const title = computed(() => {
       return route.meta.title
     })
@@ -63,6 +61,7 @@ export default {
       username,
       title,
       logout,
+      msg,
     }
   },
 }
@@ -81,6 +80,11 @@ export default {
   }
   .item {
     margin-right: 20px;
+    line-height: 20px;
   }
+}
+.badge {
+  // margin-top: 10px;
+  margin-right: 40px;
 }
 </style>
