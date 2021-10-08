@@ -1,6 +1,6 @@
 <template>
   <el-menu
-    default-active="/welcome"
+    :default-active="paths"
     background-color="#1b2a47"
     active-text-color="#fff"
     :collapse="isCollapse"
@@ -59,9 +59,13 @@
 import { getSideBar } from '../apis'
 import { computed, reactive } from 'vue'
 import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
 export default {
   name: 'SideBar',
   setup() {
+    const router = useRouter()
+    const paths = router.currentRoute._value.fullPath
+    console.log(router.currentRoute._value.fullPath)
     let sideBar = reactive([])
     const store = useStore()
     const isCollapse = computed(() => {
@@ -76,6 +80,7 @@ export default {
     const handleOpen = () => {}
     const handleClose = () => {}
     return {
+      paths,
       sideBar,
       handleOpen,
       handleClose,
