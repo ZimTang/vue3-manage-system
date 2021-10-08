@@ -49,8 +49,13 @@ export default {
 
 <style scoped lang="scss">
 .editor-container {
-  width: 90%;
+  position: relative;
+  // width: 90%;
   margin: 0 auto;
+  height: 550px;
+  #editor {
+    position: absolute;
+  }
 }
 .tips {
   background-color: #eef1f6;
