@@ -15,6 +15,9 @@
         </el-badge>
       </router-link>
     </el-tooltip>
+    <span class="fullScreen" @click="changeFullScreen">
+      <i class="el-icon-full-screen"></i>
+    </span>
     <el-dropdown trigger="click">
       <span class="el-dropdown-link">
         {{ username }}
@@ -60,6 +63,38 @@ export default {
     const goUser = () => {
       router.push('/user')
     }
+
+    // 更改网页全屏
+    const changeFullScreen = () => {
+      let element = document.documentElement
+      // 判断是否已经是全屏
+      // 如果是全屏，退出
+      if (document.fullscreen) {
+        if (document.exitFullscreen) {
+          document.exitFullscreen()
+        } else if (document.webkitCancelFullScreen) {
+          document.webkitCancelFullScreen()
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen()
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen()
+        }
+        console.log('已退出全屏！')
+      } else {
+        // 否则，进入全屏
+        if (element.requestFullscreen) {
+          element.requestFullscreen()
+        } else if (element.webkitRequestFullScreen) {
+          element.webkitRequestFullScreen()
+        } else if (element.mozRequestFullScreen) {
+          element.mozRequestFullScreen()
+        } else if (element.msRequestFullscreen) {
+          // IE11
+          element.msRequestFullscreen()
+        }
+        console.log('已进入全屏！')
+      }
+    }
     return {
       changeCollapse,
       username,
@@ -67,6 +102,7 @@ export default {
       logout,
       msg,
       goUser,
+      changeFullScreen,
     }
   },
 }
@@ -88,6 +124,10 @@ export default {
     line-height: 20px;
   }
 }
-.badge {
+.fullScreen {
+  margin-right: 20px;
+}
+.fullScreen:hover {
+  cursor: pointer;
 }
 </style>
