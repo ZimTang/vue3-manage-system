@@ -25,7 +25,7 @@
           <a href="https://github.com/Twitzz/vue3-manage-system">
             <el-dropdown-item>项目仓库</el-dropdown-item>
           </a>
-          <el-dropdown-item>个人中心</el-dropdown-item>
+          <el-dropdown-item @click="goUser">个人中心</el-dropdown-item>
           <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
         </el-dropdown-menu>
       </template>
@@ -56,12 +56,17 @@ export default {
       router.replace('/login')
       localStorage.clear()
     }
+
+    const goUser = () => {
+      router.push('/user')
+    }
     return {
       changeCollapse,
       username,
       title,
       logout,
       msg,
+      goUser,
     }
   },
 }
@@ -84,7 +89,5 @@ export default {
   }
 }
 .badge {
-  // margin-top: 10px;
-  // margin-right: 40px;
 }
 </style>

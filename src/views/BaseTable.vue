@@ -183,10 +183,15 @@ export default {
 
 <style lang="scss" scoped>
 .table-container {
-  // height: calc(100vh - 120px);
-  // margin-top: -0px;
+  position: relative;
+  height: calc(100vh - 100px);
   .table {
     font-size: 14px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
   .title {
     display: flex;

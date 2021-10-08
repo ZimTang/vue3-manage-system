@@ -422,6 +422,11 @@ core-js-pure@^3.16.0:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.18.1.tgz#097d34d24484be45cea700a448d1e74622646c80"
   integrity sha512-kmW/k8MaSuqpvA1xm2l3TVlBuvW+XBkcaOroFUpO3D4lsTGQWBTb/tBDCf/PNkkPLrwgrkQRIYNPB0CeqGJWGQ==
 
+cropperjs@^1.5.12:
+  version "1.5.12"
+  resolved "https://registry.yarnpkg.com/cropperjs/-/cropperjs-1.5.12.tgz#d9c0db2bfb8c0d769d51739e8f916bbc44e10f50"
+  integrity sha512-re7UdjE5UnwdrovyhNzZ6gathI4Rs3KGCBSc8HCIjUo5hO42CtzyblmWLj6QWVw7huHyDMfpKxhiO2II77nhDw==
+
 cross-spawn@^7.0.2:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
@@ -1317,6 +1322,13 @@ vue-i18n@^9.2.0-beta.11:
     "@intlify/shared" "9.2.0-beta.11"
     "@intlify/vue-devtools" "9.2.0-beta.11"
     "@vue/devtools-api" "^6.0.0-beta.13"
+
+vue-picture-cropper@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/vue-picture-cropper/-/vue-picture-cropper-0.5.0.tgz#bf34be146a874eab1c211ebbeb9f2f744b49ebf5"
+  integrity sha512-c1ZkSj5Uz1qo9TvpW1qVtFLrGkVeFR2t79Vx8lYWqvpn1vNjlhh+URuhNOhQUTYWxDD6Wk0Cr4qXhFwVOzJX4A==
+  dependencies:
+    cropperjs "^1.5.12"
 
 vue-router@4:
   version "4.0.11"

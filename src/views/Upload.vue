@@ -42,7 +42,7 @@ export default {
 
 <style scoped lang="scss">
 .upload-container {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
 }
 .title {

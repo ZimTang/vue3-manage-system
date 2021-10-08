@@ -1,6 +1,6 @@
 <template>
   <div class="tabs-container">
-    <el-tabs v-model="activeName" @tab-click="handleClick">
+    <el-tabs v-model="activeName" @tab-click="handleClick" class="tabs">
       <el-tab-pane
         :label="'未读消息' + '(' + state.unread.length + ')'"
         name="first"
@@ -200,6 +200,15 @@ export default {
 </script>
 <style lang="scss" scoped>
 .tabs-container {
+  position: relative;
+  height: calc(100vh - 150px);
+  .tabs {
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    right: 0;
+    bottom: 0;
+  }
 }
 .msg {
   cursor: pointer;

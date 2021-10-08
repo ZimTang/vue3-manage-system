@@ -20,7 +20,8 @@ export default {
   display: flex;
   height: calc(100vh - 160px);
   .content {
-    margin-top: 170px;
+    margin-top: 120px;
+    margin-left: 70px;
     .sub-title {
       font-size: 30px;
       line-height: 50px;
@@ -41,13 +42,13 @@ export default {
     }
   }
   .img {
-    margin-top: 100px;
+    margin-top: 50px;
     background-image: url('../assets/img/welcome.png');
     width: 371px;
     height: 438px;
     position: absolute;
     z-index: 999;
-    right: 150px;
+    right: 100px;
   }
 }
 </style>

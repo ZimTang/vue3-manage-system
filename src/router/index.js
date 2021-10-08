@@ -93,6 +93,13 @@ const routes = [
         },
         component: () => import('../views/Donate.vue'),
       },
+      {
+        path: '/user',
+        meta: {
+          title: '个人中心',
+        },
+        component: () => import('../views/User.vue'),
+      },
     ],
   },
   {

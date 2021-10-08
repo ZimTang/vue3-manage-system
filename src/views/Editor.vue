@@ -50,9 +50,8 @@ export default {
 <style scoped lang="scss">
 .editor-container {
   position: relative;
-  // width: 90%;
   margin: 0 auto;
-  height: 550px;
+  height: 450px;
   #editor {
     position: absolute;
   }

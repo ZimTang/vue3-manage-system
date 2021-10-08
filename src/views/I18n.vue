@@ -35,12 +35,11 @@ export default {
 
 <style scoped lang="scss">
 .i18n-container {
-  position: relative;
   .msg {
     height: 30px;
     line-height: 30px;
     p {
-      width: 900px;
+      width: 800px;
     }
   }
   .change {

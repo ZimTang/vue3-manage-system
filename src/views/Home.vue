@@ -76,7 +76,6 @@ export default {
   opacity: 0;
 }
 .content {
-  width: 90%;
   margin: 0 auto;
 }
 </style>
