@@ -18,7 +18,7 @@ export default {
 <style lang="scss" scoped>
 .welcome-container {
   display: flex;
-  height: calc(100vh - 160px);
+  height: 550px;
   .content {
     margin-top: 120px;
     margin-left: 70px;

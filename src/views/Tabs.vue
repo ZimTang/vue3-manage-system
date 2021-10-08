@@ -201,7 +201,7 @@ export default {
 <style lang="scss" scoped>
 .tabs-container {
   position: relative;
-  height: calc(100vh - 150px);
+  height: 550px;
   .tabs {
     position: absolute;
     top: 0px;

@@ -184,7 +184,7 @@ export default {
 <style lang="scss" scoped>
 .table-container {
   position: relative;
-  height: calc(100vh - 100px);
+  height: 560px;
   .table {
     font-size: 14px;
     position: absolute;
