@@ -23,8 +23,35 @@
 <script>
 import Header from '../components/Header.vue'
 import SideBar from '../components/SideBar.vue'
+import { useRoute } from 'vue-router'
+import { ElNotification } from 'element-plus'
 export default {
   name: 'Home',
+  setup() {
+    const route = useRoute()
+    const hours = new Date().getHours()
+    const username = localStorage.getItem('username')
+    let msg
+    const getMsg = () => {
+      if (hours > 6 && hours < 12) {
+        msg = '上午好'
+      } else if (hours >= 12 && hours <= 18) {
+        msg = '中午好'
+      } else {
+        msg = '晚上好'
+      }
+    }
+
+    getMsg()
+    // console.log(route.query.first)
+    if (route.query.first) {
+      ElNotification({
+        title: '登录成功',
+        message: `${msg}，${username}`,
+        type: 'success',
+      })
+    }
+  },
   components: {
     Header,
     SideBar,

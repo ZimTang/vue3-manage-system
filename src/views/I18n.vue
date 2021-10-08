@@ -35,6 +35,7 @@ export default {
 
 <style scoped lang="scss">
 .i18n-container {
+  padding-left: 20px;
   .msg {
     height: 30px;
     line-height: 30px;
@@ -43,7 +44,7 @@ export default {
     }
   }
   .change {
-    margin-top: 150px;
+    margin-top: 120px;
   }
 }
 </style>

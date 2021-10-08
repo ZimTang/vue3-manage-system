@@ -113,6 +113,8 @@ const router = createRouter({
   routes,
 })
 
+let first = true
+
 // 路由守卫
 router.beforeEach((to, from, next) => {
   const username = localStorage.getItem('username')
@@ -121,7 +123,17 @@ router.beforeEach((to, from, next) => {
   } else if (to.meta.permission) {
     console.log(123)
     username === 'admin' ? next() : next('/403')
+  } else if (from.path == '/login') {
+    to.query = {
+      first: true,
+    }
+    console.log(123123123)
+    next()
   } else {
+    to.query = {
+      first,
+    }
+    first = false
     next()
   }
 })
